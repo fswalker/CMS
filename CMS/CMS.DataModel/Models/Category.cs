@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace CMS.DataModel.Models
 {
-    public class LeasingBonus
+    public class Category
     {
-         public string Name { get; set; }
-         public string Description { get; set; }
-         public decimal Price { get; set; }
-
+        public int CategoryId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmsWebService.ConsoleClient", "CmsWebService.ConsoleClient\CmsWebService.ConsoleClient.csproj", "{0E0611C5-C713-42B8-944B-8B11E616598C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmsWebServiceUnitTests", "CmsWebServiceUnitTests\CmsWebServiceUnitTests.csproj", "{2B114396-52EA-4470-B912-F96BDEEEE141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E0611C5-C713-42B8-944B-8B11E616598C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0611C5-C713-42B8-944B-8B11E616598C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0611C5-C713-42B8-944B-8B11E616598C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0611C5-C713-42B8-944B-8B11E616598C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B114396-52EA-4470-B912-F96BDEEEE141}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B114396-52EA-4470-B912-F96BDEEEE141}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B114396-52EA-4470-B912-F96BDEEEE141}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B114396-52EA-4470-B912-F96BDEEEE141}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

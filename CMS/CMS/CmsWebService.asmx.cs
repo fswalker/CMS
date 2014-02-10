@@ -20,84 +20,84 @@ namespace CMS
     // [System.Web.Script.Services.ScriptService]
      class CmsWebService: System.Web.Services.WebService
     {
-        private ICmsRepository _cmsDataRepository = new CmsRepositoryMock();
+        private ICmsRepository _cmsDataRepository = new CmsRepository();
 
         [WebMethod]
-        public List<LeasingProduct> GetProducts()
+        public List<Product> GetProducts()
         {
             return _cmsDataRepository.GetProducts();
         }
         [WebMethod]
-        public LeasingProduct GetProduct(int id)
+        public Product GetProduct(int id)
         {
             return _cmsDataRepository.GetProduct(id);
         }
         [WebMethod]
-        public int AddLeasingProduct(LeasingProduct leasingProduct)
+        public int AddProduct(Product Product)
         {
-            return _cmsDataRepository.AddLeasingProduct(leasingProduct);
+            return _cmsDataRepository.AddProduct(Product);
         }
         [WebMethod]
-        public bool RemoveLeasingProduct(int id)
+        public bool RemoveProduct(int id)
         {
-            return _cmsDataRepository.RemoveLeasingProduct(id);
+            return _cmsDataRepository.RemoveProduct(id);
         }
         [WebMethod]
-        public bool EditLeasingProduct(int id, LeasingProduct updatedProduct)
+        public bool EditProduct(int id, Product updatedProduct)
         {
-            return _cmsDataRepository.EditLeasingProduct(id, updatedProduct);
+            return _cmsDataRepository.EditProduct(id, updatedProduct);
         }
 
         [WebMethod]
-        public List<LeasingCategory> GetCategories()
+        public List<Category > GetCategories()
         {
             return _cmsDataRepository.GetCategories();
         }
         [WebMethod]
-        public LeasingCategory GetCategory(int id)
+        public Category  GetCategory(int id)
         {
             return _cmsDataRepository.GetCategory(id);
         }
         [WebMethod]
-        public int AddLeasingCategory(LeasingCategory leasingCategory)
+        public int AddCategory (Category  Category )
         {
-            return _cmsDataRepository.AddLeasingCategory(leasingCategory);
+            return _cmsDataRepository.AddCategory (Category );
         }
         [WebMethod]
-        public bool RemoveLeasingCategory(int id)
+        public bool RemoveCategory (int id)
         {
-            return _cmsDataRepository.RemoveLeasingCategory(id);
+            return _cmsDataRepository.RemoveCategory (id);
         }
         [WebMethod]
-        public bool EditLeasingCategory(int id, LeasingCategory updatedCatgory)
+        public bool EditCategory (int id, Category  updatedCatgory)
         {
-            return _cmsDataRepository.EditLeasingCategory(id, updatedCatgory);
+            return _cmsDataRepository.EditCategory (id, updatedCatgory);
         }
 
         [WebMethod]
-        public List<LeasingBonus> GetBonuses()
+        public List<Bonus> GetBonuses()
         {
             return _cmsDataRepository.GetBonuses();
         }
         [WebMethod]
-        public LeasingBonus GetBonus(int id)
+        public Bonus GetBonus(int id)
         {
             return _cmsDataRepository.GetBonus(id);
         }
         [WebMethod]
-        public int AddLeasingBonus(LeasingBonus leasingBonus)
+        public int AddBonus(Bonus Bonus)
         {
-            return _cmsDataRepository.AddLeasingBonus(leasingBonus);
+            return _cmsDataRepository.AddBonus(Bonus);
         }
         [WebMethod]
-        public bool RemoveLeasingBonus(int id)
+        public bool RemoveBonus(int id)
         {
-            return _cmsDataRepository.RemoveLeasingBonus(id);
+            return _cmsDataRepository.RemoveBonus(id);
         }
         [WebMethod]
-        public bool EditLeasingBonus(int id, LeasingBonus updatedBonus)
+        public bool EditBonus(int id, Bonus updatedBonus)
         {
-            return _cmsDataRepository.EditLeasingBonus(id, updatedBonus);
+            return _cmsDataRepository.EditBonus(id, updatedBonus);
         }
     }
 }

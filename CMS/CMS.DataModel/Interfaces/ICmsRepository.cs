@@ -9,22 +9,28 @@ namespace CMS.DataModel.Interfaces
 {
     public interface ICmsRepository
     {
-        List<LeasingProduct> GetProducts();
-        LeasingProduct GetProduct(int id);
-        int AddLeasingProduct(LeasingProduct leasingProduct);
-        bool RemoveLeasingProduct(int id);
-        bool EditLeasingProduct(int id, LeasingProduct updatedProduct);
+        #region Product
+        List<Product> GetProducts();
+        Product GetProduct(int id);
+        int AddProduct(Product product);
+        bool RemoveProduct(int id);
+        bool EditProduct(int id, Product updatedProduct);
+        #endregion
 
-        List<LeasingCategory> GetCategories();
-        LeasingCategory GetCategory(int id);
-        int AddLeasingCategory(LeasingCategory leasingCategory);
-        bool RemoveLeasingCategory(int id);
-        bool EditLeasingCategory(int id, LeasingCategory updatedCatgory);
+        #region Category
+        List<Category> GetCategories();
+        Category GetCategory(int id);
+        int AddCategory(Category category);
+        bool RemoveCategory(int id);
+        bool EditCategory(int id, Category updatedCatgory);
+        #endregion
 
-        List<LeasingBonus> GetBonuses();
-        LeasingBonus GetBonus(int id);
-        int AddLeasingBonus(LeasingBonus leasingCategory);
-        bool RemoveLeasingBonus(int id);
-        bool EditLeasingBonus(int id, LeasingBonus updatedBonus);
+        #region Bonus
+        List<Bonus> GetBonuses();
+        Bonus GetBonus(int id);
+        int AddBonus(Bonus bonus);
+        bool RemoveBonus(int id);
+        bool EditBonus(int id, Bonus updatedBonus);
+        #endregion
     }
 }
