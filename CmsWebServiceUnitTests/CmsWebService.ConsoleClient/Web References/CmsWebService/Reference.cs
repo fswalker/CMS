@@ -63,7 +63,7 @@ namespace CmsWebService.ConsoleClient.CmsWebService {
         
         /// <remarks/>
         public CmsWebService() {
-            this.Url = "http://localhost:32873/CmsWebService.asmx";
+            this.Url = global::CmsWebService.ConsoleClient.Properties.Settings.Default.CmsWebService_ConsoleClient_CmsWebService_CmsWebService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -612,10 +612,6 @@ namespace CmsWebService.ConsoleClient.CmsWebService {
         
         private decimal priceField;
         
-        private Category[] categoriesField;
-        
-        private Bonus[] bonusesField;
-        
         /// <remarks/>
         public int ProductId {
             get {
@@ -653,71 +649,6 @@ namespace CmsWebService.ConsoleClient.CmsWebService {
             }
             set {
                 this.priceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Category[] Categories {
-            get {
-                return this.categoriesField;
-            }
-            set {
-                this.categoriesField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public Bonus[] Bonuses {
-            get {
-                return this.bonusesField;
-            }
-            set {
-                this.bonusesField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bestleasing.com")]
-    public partial class Category {
-        
-        private int categoryIdField;
-        
-        private string nameField;
-        
-        private string descriptionField;
-        
-        /// <remarks/>
-        public int CategoryId {
-            get {
-                return this.categoryIdField;
-            }
-            set {
-                this.categoryIdField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Description {
-            get {
-                return this.descriptionField;
-            }
-            set {
-                this.descriptionField = value;
             }
         }
     }
@@ -775,6 +706,51 @@ namespace CmsWebService.ConsoleClient.CmsWebService {
             }
             set {
                 this.priceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.18058")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://bestleasing.com")]
+    public partial class Category {
+        
+        private int categoryIdField;
+        
+        private string nameField;
+        
+        private string descriptionField;
+        
+        /// <remarks/>
+        public int CategoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                this.categoryIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
             }
         }
     }

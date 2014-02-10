@@ -6,6 +6,8 @@ using System.Web.Services;
 using CMS.DataModel;
 using CMS.DataModel.Interfaces;
 using CMS.DataModel.Models;
+using System.Xml.Serialization;
+using System.Web.Script.Services;
 
 namespace CMS
 {
@@ -18,7 +20,7 @@ namespace CMS
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
-     class CmsWebService: System.Web.Services.WebService
+    public class CmsWebService: System.Web.Services.WebService
     {
         private ICmsRepository _cmsDataRepository = new CmsRepository();
 
@@ -28,6 +30,7 @@ namespace CMS
             return _cmsDataRepository.GetProducts();
         }
         [WebMethod]
+        [XmlInclude(typeof(Bonus)), XmlInclude(typeof(Category)), XmlInclude(typeof(Product))]
         public Product GetProduct(int id)
         {
             return _cmsDataRepository.GetProduct(id);
@@ -49,7 +52,7 @@ namespace CMS
         }
 
         [WebMethod]
-        public List<Category > GetCategories()
+        public List<Category> GetCategories()
         {
             return _cmsDataRepository.GetCategories();
         }
@@ -59,7 +62,7 @@ namespace CMS
             return _cmsDataRepository.GetCategory(id);
         }
         [WebMethod]
-        public int AddCategory (Category  Category )
+        public int AddCategory (Category Category)
         {
             return _cmsDataRepository.AddCategory (Category );
         }
@@ -69,7 +72,7 @@ namespace CMS
             return _cmsDataRepository.RemoveCategory (id);
         }
         [WebMethod]
-        public bool EditCategory (int id, Category  updatedCatgory)
+        public bool EditCategory (int id, Category updatedCatgory)
         {
             return _cmsDataRepository.EditCategory (id, updatedCatgory);
         }

@@ -12,8 +12,5 @@ namespace CMS.DataModel.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-
-        public virtual List<Category> Categories { get; set; }
-        public virtual List<Bonus> Bonuses { get; set; }
     }
 }

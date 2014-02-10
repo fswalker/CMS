@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CMS.DataModel.Interfaces;
 using CMS.DataModel.Models;
 using System.Data.Entity;
+using System.Xml.Serialization;
 
 namespace CMS.DataModel
 {
@@ -52,9 +53,10 @@ namespace CMS.DataModel
             {
                 Product product = db.Products.Find(id);
                 if (product != null)
-                {                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                    db.Products.Attach(product);
-                    db.Entry(product).State = EntityState.Modified;
+                {
+                    product.Name = updatedProduct.Name;
+                    product.Description = updatedProduct.Description;
+                    product.Price = updatedProduct.Price;
                     db.SaveChanges();
                     return true;
                 }
@@ -102,10 +104,10 @@ namespace CMS.DataModel
             using (var db = new LeasingContext())
             {
                 var category = db.Categories.Find(id);
-                if (category!= null)
+                if (category != null)
                 {
-                    db.Categories.Attach(category);
-                    db.Entry(category).State = EntityState.Modified;
+                    category.Name = updatedCatgory.Name;
+                    category.Description = updatedCatgory.Description;
                     db.SaveChanges();
                     return true;
                 }
@@ -126,7 +128,8 @@ namespace CMS.DataModel
         {
             using (var db = new LeasingContext())
             {
-                return db.Bonuses.Find(id);
+                var bonus = db.Bonuses.Find(id);
+                return bonus;
             }
         }
         public int AddBonus(Bonus bonus)
@@ -155,8 +158,9 @@ namespace CMS.DataModel
                 var bonus = db.Bonuses.Find(id);
                 if (bonus != null)
                 {
-                    db.Bonuses.Attach(bonus);
-                    db.Entry(bonus).State = EntityState.Modified;
+                    bonus.Name = updatedBonus.Name;
+                    bonus.Description = updatedBonus.Description;
+                    bonus.Price = updatedBonus.Price;
                     db.SaveChanges();
                     return true;
                 }
