@@ -5,16 +5,24 @@ namespace CmsWebServiceUnitTests
 {
     using NUnit.Framework;
     using CmsWebService;
+    using System.Collections.Generic;
 
     [TestFixture]
+    [Category("UnitTests")]
     public class CmsWebServiceUnitTests
     {
         private CmsWebService.CmsWebService cmsWeb;
 
-        [SetUp]
+        [TestFixtureSetUp]
         public void Init()
         {
             cmsWeb = new CmsWebService.CmsWebService();
+        }
+
+        [TestFixtureTearDown]
+        public void TearDown()
+        {
+            cmsWeb.Dispose();
         }
 
         #region ProductTests
@@ -257,5 +265,186 @@ namespace CmsWebServiceUnitTests
             Assert.AreEqual(expectedPrice, changedBonus.Price, "Price didn't change!");
         }
         #endregion
+    }
+
+    [TestFixture]
+    [Category("Performance")]
+    public class CmsWebServicePerformanceTests
+    {
+        private CmsWebService.CmsWebService cmsWeb;
+        private List<int> productsIndexes = new List<int>();
+        private List<int> categoriesIndexes = new List<int>();
+        private List<int> bonusesIndexes = new List<int>();
+
+        [TestFixtureSetUp]
+        public void Init()
+        {
+            cmsWeb = new CmsWebService.CmsWebService();
+        }
+
+        [TestFixtureTearDown]
+        public void TearDown()
+        {
+            cmsWeb.Dispose();
+        }
+
+        [SetUp]
+        public void InitTest()
+        {
+            //We need to populate DB with at least 1000 records to operate on the big data
+            int numberOfProducts, numberOfCategories, numberOfBonuses;
+            //numberOfProducts = cmsWeb.GetProducts().Length;
+            //numberOfCategories = cmsWeb.GetCategories().Length;
+            //numberOfBonuses = cmsWeb.GetBonuses().Length;
+
+            numberOfProducts = 0;
+            numberOfCategories = 0;
+            numberOfBonuses = 0;
+            for (int i = 0; i < 1000; i++) 
+            {
+                if ( i < ( 1000 - numberOfProducts ) )
+                {
+                    productsIndexes.Add(cmsWeb.AddProduct(new Product() { Name = "Product " + i.ToString(), Description = "Desc prod " + i.ToString(), Price = i * 10m }));
+                }
+                if (i < (1000 - numberOfCategories))
+                {
+                    categoriesIndexes.Add(cmsWeb.AddCategory(new Category() { Name = "Category " + (i + 1).ToString(), Description = "Desc cat " + (i + 1).ToString() }));
+                }
+                if (i < (1000 - numberOfBonuses))
+                {
+                    bonusesIndexes.Add(cmsWeb.AddBonus(new Bonus() { Name = "Bonus " + (i + 1).ToString(), Description = "Desc bonus " + (i + 1).ToString(), Price = (i + 1) * 10m }));
+                }
+            }
+        }
+
+        [TearDown]
+        public void DisposeTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i < productsIndexes.Count)
+                {
+                    cmsWeb.RemoveProduct(productsIndexes[i]);
+                }
+                productsIndexes.Clear();
+                if (i < categoriesIndexes.Count)
+                {
+                    cmsWeb.RemoveCategory(categoriesIndexes[i]);
+                }
+                categoriesIndexes.Clear();
+                if (i < bonusesIndexes.Count)
+                {
+                    cmsWeb.RemoveBonus(bonusesIndexes[i]);
+                }
+            }
+        }
+
+        [Test]
+        public void AddHugeNumberOfProductsTest() 
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.AddProduct(new Product() { Name = "Product " + i.ToString(), Description = "Desc prod " + i.ToString(), Price = i * 10m });
+            }
+        }
+
+        [Test]
+        public void AddHugeNumberOfCategoriesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.AddCategory(new Category() { Name = "Category " + (i + 1).ToString(), Description = "Desc cat " + (i + 1).ToString() });
+            }
+        }
+
+        [Test]
+        public void AddHugeNumberOfBonusesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.AddBonus(new Bonus() { Name = "Bonus " + (i + 1).ToString(), Description = "Desc bonus " + (i + 1).ToString(), Price = (i + 1) * 10m });
+            }
+        }
+
+        [Test]
+        public void RemoveHugeNumberOfProductsTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.RemoveProduct(productsIndexes[i]);
+            }
+        }
+
+        [Test]
+        public void RemoveHugeNumberOfCategoriesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.RemoveCategory(categoriesIndexes[i]);
+            }
+        }
+
+        [Test]
+        public void RemoveHugeNumberOfBonusesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.RemoveBonus(bonusesIndexes[i]);
+            }
+        }
+
+        [Test]
+        public void EditHugeNumberOfProducts()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.EditProduct(productsIndexes[i], new Product() { Name = "Product " + i.ToString(), Description = "Desc prod " + i.ToString(), Price = i * 10m });
+            }
+        }
+
+        [Test]
+        public void EditHugeNumberOfCategoriesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.EditCategory(categoriesIndexes[i], new Category() { Name = "Category " + (i + 1).ToString(), Description = "Desc cat " + (i + 1).ToString() });
+            }
+        }
+
+        [Test]
+        public void EditHugeNumberOfBonusesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.EditBonus(bonusesIndexes[i], new Bonus() { Name = "Bonus " + (i + 1).ToString(), Description = "Desc bonus " + (i + 1).ToString(), Price = (i + 1) * 10m });
+            }
+        }
+
+        [Test]
+        public void GetHugeNumberOfProducts()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.GetProducts();
+            }
+        }
+
+        [Test]
+        public void GetHugeNumberOfCategoriesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.GetCategories();
+            }
+        }
+
+        [Test]
+        public void GettHugeNumberOfBonusesTest()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                cmsWeb.GetBonuses();
+            }
+        }
     }
 }

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\Project1.nunit" total="12" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-02-14" time="02:54:33">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.6413" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="LAPTOP" user="Michał" user-domain="LAPTOP" />
+  <culture-info current-culture="pl-PL" current-uiculture="pl-PL" />
+  <test-suite type="Project" name="E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\Project1.nunit" executed="True" result="Success" success="True" time="2889.557" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\CmsWebServiceUnitTests\bin\Debug\CmsWebServiceUnitTests.dll" executed="True" result="Success" success="True" time="2889.556" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="CmsWebServiceUnitTests" executed="True" result="Success" success="True" time="2889.555" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="CmsWebServicePerformanceTests" executed="True" result="Success" success="True" time="2889.554" asserts="0">
+                <categories>
+                  <category name="Performance" />
+                </categories>
+                <results>
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.AddHugeNumberOfBonusesTest" executed="True" result="Success" success="True" time="76.892" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.AddHugeNumberOfCategoriesTest" executed="True" result="Success" success="True" time="67.817" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.AddHugeNumberOfProductsTest" executed="True" result="Success" success="True" time="121.070" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.EditHugeNumberOfBonusesTest" executed="True" result="Success" success="True" time="69.134" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.EditHugeNumberOfCategoriesTest" executed="True" result="Success" success="True" time="124.793" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.EditHugeNumberOfProducts" executed="True" result="Success" success="True" time="85.579" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.GetHugeNumberOfCategoriesTest" executed="True" result="Success" success="True" time="770.406" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.GetHugeNumberOfProducts" executed="True" result="Success" success="True" time="727.950" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.GettHugeNumberOfBonusesTest" executed="True" result="Success" success="True" time="605.874" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.RemoveHugeNumberOfBonusesTest" executed="True" result="Success" success="True" time="68.423" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.RemoveHugeNumberOfCategoriesTest" executed="True" result="Success" success="True" time="96.767" asserts="0" />
+                  <test-case name="CmsWebServiceUnitTests.CmsWebServicePerformanceTests.RemoveHugeNumberOfProductsTest" executed="True" result="Success" success="True" time="74.778" asserts="0" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

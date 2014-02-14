@@ -42,8 +42,11 @@ namespace CMS.DataModel
             using (var db = new LeasingContext())
             {
                 var product = db.Products.Find(id);
-                db.Products.Remove(product);
-                db.SaveChanges();
+                if (product != null)
+                {
+                    db.Products.Remove(product);
+                    db.SaveChanges();
+                }
                 return true;
             }
         }
@@ -94,8 +97,11 @@ namespace CMS.DataModel
             using (var db = new LeasingContext())
             {
                 var category = db.Categories.Find(id);
-                db.Categories.Remove(category);
-                db.SaveChanges();
+                if (category != null)
+                {
+                    db.Categories.Remove(category);
+                    db.SaveChanges();
+                }
                 return true;
             }
         }
@@ -146,8 +152,11 @@ namespace CMS.DataModel
             using (var db = new LeasingContext())
             {
                 var bonus = db.Bonuses.Find(id);
-                db.Bonuses.Remove(bonus);
-                db.SaveChanges();
+                if (bonus != null)
+                {
+                    db.Bonuses.Remove(bonus);
+                    db.SaveChanges();
+                }
                 return true;
             }
         }

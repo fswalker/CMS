@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
   <TopNode>[0-1000]E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\Project1.nunit</TopNode>
-  <SelectedNode>[0-1002]CmsWebServiceUnitTests.CmsWebServiceUnitTests.GetProductsTest</SelectedNode>
+  <SelectedNode>[0-1001]CmsWebServiceUnitTests.CmsWebServiceUnitTests</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\Project1.nunit" Expanded="true" />
-    <Node UniqueName="[0-1004]E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\CmsWebServiceUnitTests\bin\Debug\CmsWebServiceUnitTests.dll" Expanded="true" />
-    <Node UniqueName="[0-1005]CmsWebServiceUnitTests" Expanded="true" />
+    <Node UniqueName="[0-1017]E:\agh\sem9\to\project\cms\CmsWebServiceUnitTests\CmsWebServiceUnitTests\bin\Debug\CmsWebServiceUnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1018]CmsWebServiceUnitTests" Expanded="true" />
     <Node UniqueName="[0-1001]CmsWebServiceUnitTests.CmsWebServiceUnitTests" Expanded="true" />
   </Nodes>
 </VisualState>
